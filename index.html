@@ -28,10 +28,17 @@
         </ul></div>
     </nav>
     </header>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="close" data-modal-close><svg height="30" width="30">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg></button>
+          </div>
+      </div>
     <section class="hero">
         <div class="container">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <button class="button-hero" type="button">Заказать услугу</button></div>
+        <button class="button-hero" type="button" data-modal-open>Заказать услугу</button></div>
     </section>
     <section class="section-advantages">
         <div class="container">
@@ -75,13 +82,16 @@
             </li>
         </ul></div>
     </section>
-    <section>
+    <section class="work">
         <div class="container">
         <h2 class="section-title">Чем мы занимаемся</h2>
         <ul class="container-foto">
-            <li class="foto-list"><img class="foto" src="images/img1.jpg" alt="рабочий стол программиста" width="370"/></li>
-            <li class="foto-list"><img class="foto" src="images/img2.jpg" alt="работа над дизайном телефона" width="370"/></li>
-            <li class="foto-list"><img class="foto" src="images/img3.jpg" alt="рабочий стол дизайнера" width="370"/></li>
+            <li class="foto-list"><div class="foto-thumb"><img class="foto" src="images/img1.jpg" alt="рабочий стол программиста" width="370"/>
+            <p class="text-overlay">Десктопные приложения</p></div></li>
+            <li class="foto-list"><div class="foto-thumb"><img class="foto" src="images/img2.jpg" alt="работа над дизайном телефона" width="370"/>
+            <p class="text-overlay">Мобильные приложения</p></div></li>
+            <li class="foto-list"><div class="foto-thumb"><img class="foto" src="images/img3.jpg" alt="рабочий стол дизайнера" width="370"/>
+            <p class="text-overlay">Дизайнерские решения</p></div></li>
         </ul></div>
     </section>
     <section class="section-tiam">
@@ -200,6 +210,7 @@
             </ul></div>
         </div>
       </footer>
+      <script src="./js/modal.js"></script>
 </body>
   
 </html>

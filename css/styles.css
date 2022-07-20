@@ -61,7 +61,10 @@ html {
     --s-grey: #2F303A;
     --s-lightgrey: #757575;
     --s-whitebutton: #F5F4FA;
-}
+
+    --anim-alow: 250ms ease-in;
+    --anim-fast: 1200ms ease-in;
+}   
     
 /*container*/
     .container {
@@ -124,6 +127,10 @@ html {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--s-black);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .link-nav-portfolio {
     color: var(--s-blue);
@@ -149,6 +156,10 @@ html {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--s-lightgrey);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .link-mailtel:hover,
     .link-mailtel:focus {
@@ -156,12 +167,58 @@ html {
 }
     .svg-mailtel{
     fill: var(--s-lightgrey);
-    }
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
     .link-mailtel:hover .svg-mailtel,
     .link-mailtel:focus .svg-mailtel {
     fill: var(--s-blue);
 }    
+/*modal*/
 
+    .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  
+    opacity: 1;
+}
+  
+  .backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+  
+  .modal {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  
+    min-height: 581px;
+    min-width: 528px;
+    background-color: #fff;
+}
+  .close {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0;
+    border: none;
+    margin-top: 8px;
+    margin-right: 8px;
+    background-color: transparent;
+    background-image: url(./images/icons.svg#icon-close);
+}
+  
 /*hero background*/
     .hero{
     background-color: var(--s-grey);
@@ -275,7 +332,31 @@ html {
     .foto {
     width: 370px;
 }
+    .foto-thumb {
+    position: relative;
+    overflow: hidden;
+}  
+    .text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(224px);
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(47, 48, 58, 0.8);
+    padding: 27px 0;
+    text-align: center;
 
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--s-white);
+}
+
+
+   
 /*our team*/
     .container-team {
     display: flex;
@@ -344,9 +425,16 @@ html {
 
         background: #fff;
         border-radius: 50%;
+
+        transition-property: background-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .socials-icon {
-    fill: #AFB1B8
+        fill: #AFB1B8;
+        transition-property: fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .socials-link:hover,
     .socials-link:focus {
@@ -370,12 +458,19 @@ html {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     width: 170px;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .icon-customers:last-child {
     margin-right: 0; 
 }
     .svg-customers {
     fill: #AFB1B8;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     .icon-customers:hover,
     .icon-customers:focus {
@@ -385,9 +480,7 @@ html {
     .icon-customers:focus .svg-customers {
     fill: #2196F3;
 }
-   
-    
-
+ 
 /*futer*/
     .bloc-footer {
     display: flex;
@@ -423,6 +516,9 @@ html {
     font-size: 14px;
     line-height: 1.71;
     color: var(--s-white);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .footer-link-maps:focus,
     .footer-link-maps:hover {
@@ -434,6 +530,9 @@ html {
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .footer-link:focus,
     .footer-link:hover {
@@ -492,9 +591,17 @@ footer .container {
 
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-icon-footer {
-    fill: #fff
+    fill: #fff;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .socials-link-footer:hover,
 .socials-link-footer:focus {
@@ -538,9 +645,17 @@ footer .container {
     background-color: var(--s-whitebutton);
     text-align: center;
     padding: 6px 22px;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .button-filtr-portfolio {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     
     .button-filtr-portfolio {
@@ -568,6 +683,9 @@ footer .container {
     .list-services {
     margin-right: 30px;
     margin-bottom: 30px;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
     .list-services:nth-child(3n) {
     margin-right: 0;
@@ -601,12 +719,37 @@ footer .container {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     }
 
-
-.info {
+    .info {
     border-right: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
   }
+    .services-thumb {
+    position: relative;
+    overflow: hidden;
+}
+    .services-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.9);
+    padding: 63px 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+
+    color: var(--s-white);
+
+    transition: transform var(--anim-alow);
+}
+    .list-services:hover .services-overlay,
+    .list-services:focus .services-overlay {
+    transform: translateY(0);
+    }
 
 
 
