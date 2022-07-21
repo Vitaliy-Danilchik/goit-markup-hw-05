@@ -114,6 +114,7 @@ html {
     .menu-nav:last-child {
     margin-right: 0;
 }
+
 /*auth-nav*/
     .auth-nav {
     display: flex;
@@ -140,14 +141,29 @@ html {
     .link-nav:focus {
     color: var(--s-blue);
 }
+    .link-nav-portfolio {
+     position: relative;   
+}
+
+    .link-nav-portfolio::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--s-blue);
+    border-radius: 2px;
+}
 /* mail and telephon*/
 
     .svg-mailtel{
     margin-right: 10px;
     }
     .link-mailtel {
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
     }
 
     .link-mailtel {
@@ -190,6 +206,7 @@ html {
 }
   
   .backdrop.is-hidden {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
@@ -208,7 +225,10 @@ html {
     min-width: 528px;
     background-color: #fff;
 }
-  .close {
+    .backdrop.is-hidden .modal {
+    transform: translateX(-100vh);
+}    
+    .close {
     min-width: 30px;
     min-height: 30px;
     padding: 0;
@@ -224,7 +244,7 @@ html {
     background-color: var(--s-grey);
     
     background: rgba(47, 48, 58, 0.4);
-    background-image:linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/fon.png);
+    background-image:linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/fon.png);
     padding-bottom: 192.5px;
     padding-top: 200px;
     text-align: center;
